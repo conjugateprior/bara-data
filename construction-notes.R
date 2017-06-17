@@ -1,20 +1,8 @@
 # Processing notes
-#
 
-## set up the UK manifestos as a corpus
+library(rvest)
 
-library(quanteda)
-library(readtext)
-txts <- readtext("inst/uk_manifestos/*.txt",
-                 docvarsfrom="filenames",
-                 docvarnames=c("country", "scope", "year", "lang", "party"),
-                 dvsep="[_.]")
-corpus_uk_manif <- corpus(txts,
-                          metacorpus=list("notes"="The manifestos from quantedaData, minus Eire, plus some 2015 and 2017 manifestos and consistent party naming"))
-
-
-## extraction from bara
-deb <- read_html("vignettes/uk-abortion-debate-original-source.html")
+deb <- read_html("abortion-debate-hansard.html")
 
 mes <- html_nodes(deb, "div[class='hentry member_contribution']")
 speakers <- html_attr(html_node(mes, "cite a"), "title")
