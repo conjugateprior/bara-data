@@ -12,3 +12,5 @@ These are [quanteda](https://CRAN.R-project.org/package=quanteda) corpora.  To l
 library(quanteda)
 load('corpus_bara_turn.rda') # creates corpus_bara_turn
 ```
+
+The debate's web page page is `abortion_debate_hansard.html` is taken from [http://hansard.millbanksystems.com/](http://hansard.millbanksystems.com/).
